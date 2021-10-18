@@ -5,6 +5,23 @@ import os
 
 os.system("color 0A")
 while True:
+    print("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒")
+    print("▒▒▒▒▒▒▒▒▄▄▄▄▄▄▄▄▒▒▒▒▒▒")
+    print("▒▒█▒▒▒▄██████████▄▒▒▒▒")
+    print("▒█▐▒▒▒████████████▒▒▒▒")
+    print("▒▌▐▒▒██▄▀██████▀▄██▒▒▒")
+    print("▐┼▐▒▒██▄▄▄▄██▄▄▄▄██▒▒▒")
+    print("▐┼▐▒▒██████████████▒▒▒")
+    print("▐▄▐████─▀▐▐▀█─█─▌▐██▄▒")
+    print("▒▒█████───PITER──▐███▌")
+    print("▒▒█▀▀██▄█─▄───▐─▄███▀▒")
+    print("▒▒█▒▒███████▄██████▒▒▒")
+    print("▒▒▒▒▒██████████████▒▒▒")
+    print("▒▒▒▒▒██████████████▒▒▒")
+    print("▒▒▒▒▒█████████▐▌██▌▒▒▒")
+    print("▒▒▒▒▒▐▀▐▒▌▀█▀▒▐▒█▒▒▒▒▒")
+    print("▒▒▒▒▒▒▒▒▒▒▒▐▒▒▒▒▌▒▒▒▒▒")
+    print("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒")
     print("Opciones relevantes:")
     print("1-> Conectar dispositivo")
     print("2-> Abrir shell")
@@ -15,9 +32,14 @@ while True:
     print("7-> Ver Paquetes instalados")
     print("8-> Ver interfaz Grafica")
     print("9-> Reiniciar ADB")
+    print("10-> Informacion del dispositivo")
 
     option = int(input("Ponga su opcion aqui-> "))
 
+
+    os.system("cls")
+
+    
     if(option == 1):
         ips = input("Escriba su ip aqui-> ")
         ip = os.system(f"adb connect {ips}")
@@ -40,3 +62,16 @@ while True:
         ip = os.system("start scrcpy.exe")
     elif(option == 9):
         ip = os.system("adb kill-server")
+    elif(option == 10):
+        print("Resolucion de pantalla")
+        ip = os.system("adb shell wm size")
+        print("Version de Android")
+        ip = os.system("adb shell getprop ro.build.version.release")
+        print("Ultimo parche de seguridad")
+        ip = os.system("adb shell getprop ro.build.version.security_patch")
+        print("Modelo")
+        ip = os.system("adb shell getprop ro.product.model")
+        print("Marca")
+        ip = os.system("adb shell getprop ro.product.brand")
+
+    
